@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass:compile": "node-sass --include-path sass sass/main.scss css/main.css"
+    "sass:compile": "node-sass --include-path sass ./src/sass/main.scss ./css/main.css",
+    "build": "babel src/js -d js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,10 @@
   },
   "homepage": "https://github.com/robert-laws/css-preprocessor-pluralsight#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "http-server": "^0.11.1",
     "node-sass": "^4.8.3"
   },
   "dependencies": {
