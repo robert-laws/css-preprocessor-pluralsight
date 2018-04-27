@@ -4,7 +4,9 @@
   "description": "CSS Preprocessor course with Sass",
   "main": "app.js",
   "scripts": {
+    "start": "DEBUG=app,app:* nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint app.js",
     "sass:compile": "node-sass --include-path sass ./src/sass/main.scss ./css/main.css",
     "build": "babel src/js -d js"
   },
@@ -21,15 +23,39 @@
     "url": "https://github.com/robert-laws/css-preprocessor-pluralsight/issues"
   },
   "homepage": "https://github.com/robert-laws/css-preprocessor-pluralsight#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "nodemon": "^1.17.3",
+    "bootstrap": "4.0.0",
+    "chalk": "2.3.2",
+    "debug": "3.1.0",
+    "ejs": "2.5.8",
+    "express": "^4.16.3",
+    "jquery": "3.3.1",
+    "mongodb": "3.0.5",
+    "morgan": "1.9.0",
+    "pug": "2.0.3"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "http-server": "^0.11.1",
-    "node-sass": "^4.8.3"
+    "node-sass": "^4.8.3",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.10.0"
   },
-  "dependencies": {
-    "babel": "^6.23.0",
-    "nodemon": "^1.17.3"
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
   }
 }
